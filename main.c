@@ -1,20 +1,15 @@
-#include <stdlib.h>
-
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
+int main ()
 {
-    const char* a = "Bilgisayar";
-    char* b = ft_strdup(a);
-    void* result;
-    result = ft_strdup(b);
+const char *a;
+a = "bilgisayar";
+int x;
+x = 'i';
 
-    printf("%s-", a);
-    printf("%s", b);
-    printf("%p", result);
-    free(b);
-    free(result);
 
-    return 0;
+printf("%s",ft_strrchr(a,98));
+
 }

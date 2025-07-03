@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 18:56:44 by dkaymak           #+#    #+#             */
+/*   Updated: 2025/07/02 18:57:01 by dkaymak          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -13,7 +25,6 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 
-	// Kelime sayısını bul
 	i = 0;
 	word_count = 0;
 	while (s[i])
@@ -27,13 +38,10 @@ char	**ft_split(char const *s, char c)
 				i++;
 		}
 	}
-
-	// Ana dizi için malloc
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (!result)
 		return (NULL);
 
-	// Kelimeleri doldur
 	i = 0;
 	j = 0;
 	while (s[i])
