@@ -6,7 +6,7 @@
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 17:21:37 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/06/27 17:47:01 by dkaymak          ###   ########.fr       */
+/*   Updated: 2025/07/03 22:07:57 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	if ((dest == NULL && src == NULL) || n == 0)
+		return (dest);
 	if (d > s)
 	{
 		i = n;

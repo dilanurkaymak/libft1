@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 18:56:28 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/07/02 18:56:31 by dkaymak          ###   ########.fr       */
+/*   Created: 2025/07/05 16:20:50 by dkaymak           #+#    #+#             */
+/*   Updated: 2025/07/05 16:20:51 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,29 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
+	size_t	trim_start;
+	size_t	trim_end;
 	size_t	i;
-	char	*str;
+	char	*trimmed;
 
 	if (!s1 || !set)
 		return (NULL);
-	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_strchr(set, s1[end - 1]))
-		end--;
-	str = malloc(end - start + 1);
-	if (!str)
+	trim_start = 0;
+	while (s1[trim_start] && ft_strchr(set, s1[trim_start]))
+		trim_start++;
+	trim_end = ft_strlen(s1);
+	while (trim_end > trim_start && ft_strchr(set, s1[trim_end - 1]))
+		trim_end--;
+	trimmed = malloc(trim_end - trim_start + 1);
+	if (!trimmed)
 		return (NULL);
 	i = 0;
-	while (start < end)
+	while (trim_start < trim_end)
 	{
-		str[i] = s1[start];
+		trimmed[i] = s1[trim_start];
 		i++;
-		start++;
+		trim_start++;
 	}
-	str[i] = '\0';
-	return (str);
+	trimmed[i] = '\0';
+	return (trimmed);
 }

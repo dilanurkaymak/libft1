@@ -5,8 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 18:55:59 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/07/02 18:56:00 by dkaymak          ###   ########.fr       */
+/*   Created: 2025/07/05 16:32:19 by dkaymak           #+#    #+#             */
+/*   Updated: 2025/07/05 16:50:17 by dkaymak          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 16:32:19 by dkaymak           #+#    #+#             */
+/*   Updated: 2025/07/05 16:32:20 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +27,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*join;
-	size_t	i;
-	size_t	j;
+	char	*joined;
 	size_t	len1;
 	size_t	len2;
 
@@ -25,21 +35,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	join = (char *)malloc(len1 + len2 + 1);
-	if (!join)
+	joined = malloc(len1 + len2 + 1);
+	if (!joined)
 		return (NULL);
-	i = 0;
-	while (i < len1)
-	{
-		join[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (j < len2)
-	{
-		join[i + j] = s2[j];
-		j++;
-	}
-	join[i + j] = '\0';
-	return (join);
+	ft_strlcpy(joined, s1, len1 + 1);
+	ft_strlcpy(joined + len1, s2, len2 + 1);
+	return (joined);
 }

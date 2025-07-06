@@ -6,21 +6,11 @@
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 17:24:40 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/06/27 17:47:39 by dkaymak          ###   ########.fr       */
+/*   Updated: 2025/07/03 20:19:17 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

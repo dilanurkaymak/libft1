@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 18:54:55 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/07/03 20:14:17 by dkaymak          ###   ########.fr       */
+/*   Created: 2025/07/06 14:59:16 by dkaymak           #+#    #+#             */
+/*   Updated: 2025/07/06 16:19:25 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*ptr;
-	size_t	total;
+	char			*allocated;
+	size_t			len;
+	size_t			i;
 
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	total = nmemb * size;
-	ptr = malloc(total);
-	if (!ptr)
+	if (!s)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
-	return (ptr);
+	len = ft_strlen(s);
+	allocated = (char *)malloc(sizeof(char) * (len + 1));
+	if (!allocated)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		allocated[i] = f(i, s[i]);
+		i++;
+	}
+	allocated[len] = '\0';
+	return (allocated);
 }
