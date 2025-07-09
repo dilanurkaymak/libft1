@@ -6,12 +6,12 @@
 /*   By: dkaymak <dkaymak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 18:54:12 by dkaymak           #+#    #+#             */
-/*   Updated: 2025/07/06 17:21:06 by dkaymak          ###   ########.fr       */
+/*   Updated: 2025/07/09 06:17:53 by dkaymak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
 # include <unistd.h>
 # include <stdlib.h>
